@@ -1,7 +1,7 @@
 from PIL import Image
 def convert_text_to_bin(str):
     '''Chuyển từ văn bản sang nhị phân'''
-    binary_key = [bin(ord(c))[2:].rjust(8,'0') for c in str]  # remove '0b' from string, fill 8 bits
+    binary_key = [bin(ord(c))[2:].rjust(8,'0') for c in str]  
     binary_key = ''.join(binary_key)
     return binary_key
 def hid_bit(bit,vt,value):
