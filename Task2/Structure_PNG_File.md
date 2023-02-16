@@ -9,7 +9,7 @@ Trong đó:
 - Hai byte đấu tiên `80 50`: phân biệt PNG với các định dạng khác trên hệ thống
 - Byte thứ 3 đến 5 `50 4E 47`: nêu tên định dạng file (PNG)
 - Hai byte tiếp theo `0D 0A`: là 2 byte `CR(\n)-LF(\n)`, nhận diện lỗi truyền kém làm thay đổi trình tự dòng
-- Byte kế tiếp `1A`: là kí tự `Ctrl-Z` để ngưng hiển thị tập tròn MS-DOS
+- Byte kế tiếp `1A`: là kí tự `Ctrl-Z` để ngưng hiển thị tệp trong MS-DOS
 - Byte cuối `0A`: là kí tự `LF(\n)`, kiểm tra quá trình dịch CR-LF có bị đảo ngược hay không.
 
 ## Các Chunks
