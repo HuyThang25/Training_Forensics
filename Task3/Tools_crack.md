@@ -91,7 +91,7 @@ $ hashcat -m 0 -a 0 hash.txt /usr/share/john/password.lst
 
 ## Tấn công brute--force
 
-Mode `-a 3`
+Ta sử dụng mode `-a 3`
 
 Các từ khoá charsets 
 ~~~
@@ -107,6 +107,7 @@ Các từ khoá charsets
   b | 0x00 - 0xff
 ~~~
 
+Ta chuyển vào Mask (là tập hợp những charset)  
 
 
 # Tool bkcrack
