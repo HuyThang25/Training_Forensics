@@ -54,7 +54,28 @@ $ john -show <file-chứa-hash>
 
 Hashcat là công cụ crack hash/ khôi phục mật khẩu từ hash nhanh nhất và tiên tiến nhất hiện nay trên giao diện dòng lệnh. Hashcat cung cấp cho người sử dụng 5 chế độ tấn công/khooi phục mật khẩu khác nhau áp dụng cho hơn 300 thuật toán hash khác nhau
 
+Câu lệnh:
+~~~
+hashcat [options]... hash|hashfile|hccapxfile [dictionary|mask|directory]...
+~~~
+Các option thường dùng:
+- `-m` : loại mã băm
+~~~
+Sử dụng câu lệnh `hashcat -h` để xem 
+~~~
+- `-a` : chế độ tấn công
+~~~
+- [ Attack Modes ] -
 
+  # | Mode
+ ===+======
+  0 | Straight
+  1 | Combination
+  3 | Brute-force
+  6 | Hybrid Wordlist + Mask
+  7 | Hybrid Mask + Wordlist
+  9 | Association
+~~~
 
 # Tool bkcrack
 
