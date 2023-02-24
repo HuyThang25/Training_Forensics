@@ -54,9 +54,11 @@ $ john -show <file-chứa-hash>
 
 Hashcat là công cụ crack hash/ khôi phục mật khẩu từ hash nhanh nhất và tiên tiến nhất hiện nay trên giao diện dòng lệnh. Hashcat cung cấp cho người sử dụng 5 chế độ tấn công/khooi phục mật khẩu khác nhau áp dụng cho hơn 300 thuật toán hash khác nhau
 
-# Tool pkcrack
 
-Pkcrack bẻ khoá mật khẩu dựa trên việc tấn công biết bản rõ (known plaintext attack), nghĩa là bạn phải biết một phần bản rõ của dữ liệu để giải mã.
+
+# Tool bkcrack
+
+Bkcrack là công cụ bẻ khoá mật khẩu dựa trên việc tấn công biết bản rõ (known plaintext attack), nghĩa là bạn phải biết một phần bản rõ của dữ liệu để giải mã.
 
 Để thực hiện crack bằng pkcrack ta phải có hai file:
 
@@ -65,17 +67,46 @@ Pkcrack bẻ khoá mật khẩu dựa trên việc tấn công biết bản rõ 
 
 Sau khi đủ điều kiện thì sử dụng câu lệnh sau để crack:
 ~~~
-pkcrack -C encrypted-ZIP -c ciphertextname -P plaintext-ZIP -p plaintextname -d decrypted_file -a
+bkcrack -C encrypted-ZIP -c ciphertextname -P plaintext-ZIP -p plaintextname -d decrypted_file 
 ~~~
 
 Trong đó:
+
 - `encrypted-ZIP` là tên phân vùng zip thứ nhât
 - `ciphertextname` là tên của file bên trong encrypted-ZIP, cái mà đang có bản rõ
 - `plaintext-ZIP` là tên của phân vùng zip thứ hai
 - `plaintextname` là tên của tệp bản rõ trong plaintext-ZIP
-- `decrypted_file` là tên của 
-- `-a`
+- `decrypted_file` là tên của thư mục sau khi crack xong các tệp sẽ được lưu vào đó 
+
+Một số lênh thường dùng 
+## Lệnh thay đổi pass mới   
+~~~
+bkcrack -C encrypted.zip -k keys -U new.zip pass_new 
+~~~
+ 
+## Lệnh khôi phục tệp bên trong  
+
+~~~
+Kali@kali:~$ bkcrack -C encrypted.zip -c cipher -k keys -d deciphered
+~~~
+ 
+## Lệnh khôi phục pass ban đầu    	
+~~~
+Kali@kali:~$ bkcrack -k keys --bruteforce ?b --length disgits 
+~~~
+
+ 
+
+
 # Tool bkcrack
-Bkcrack cũng là một công cụ bẻ khoá mật khẩu dựa trên việc tấn công biết bản rõ
+Pkcrack cũng là một công cụ bẻ khoá mật khẩu dựa trên việc tấn công biết bản rõ.
+
+Điều kiện để sử dụng cũng giống file bkcrack
+
+
 
 # Điểm khác biệt giữa pkcrack và bkcrack
+
+## Bkcrack là công cụ phá mã hoá Blowfish, trong khi pkcrack là công cụ phá mã hoá RSA.
+
+## 
