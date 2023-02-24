@@ -45,10 +45,37 @@ John ghép thử tất cả các ký tự thành một password có độ dài c
 
 Để thực hiện tấn công brute-force ta thêm `-i:<độ-dài-pass>` vào câu lệnh. Trong đó -i để vào Incremental mode. 
 
+Khi muốn xem mật khẩu đã bẻ khoá ta sử dụng câu lệnh:
+
+~~~
+$ john -show <file-chứa-hash>
+~~~
 # Tool Hashcat
+
+Hashcat là công cụ crack hash/ khôi phục mật khẩu từ hash nhanh nhất và tiên tiến nhất hiện nay trên giao diện dòng lệnh. Hashcat cung cấp cho người sử dụng 5 chế độ tấn công/khooi phục mật khẩu khác nhau áp dụng cho hơn 300 thuật toán hash khác nhau
 
 # Tool pkcrack
 
+Pkcrack bẻ khoá mật khẩu dựa trên việc tấn công biết bản rõ (known plaintext attack), nghĩa là bạn phải biết một phần bản rõ của dữ liệu để giải mã.
+
+Để thực hiện crack bằng pkcrack ta phải có hai file:
+
+- Thứ nhất là: phân vùng zip muốn crack.
+- Thứ hai là: một phân vùng zip khác chứa ít nhất một file bên trong phân zip thứ nhất. File này phải được nén cùng phương thức với file thứ nhất.
+
+Sau khi đủ điều kiện thì sử dụng câu lệnh sau để crack:
+~~~
+pkcrack -C encrypted-ZIP -c ciphertextname -P plaintext-ZIP -p plaintextname -d decrypted_file -a
+~~~
+
+Trong đó:
+- `encrypted-ZIP` là tên phân vùng zip thứ nhât
+- `ciphertextname` là tên của file bên trong encrypted-ZIP, cái mà đang có bản rõ
+- `plaintext-ZIP` là tên của phân vùng zip thứ hai
+- `plaintextname` là tên của tệp bản rõ trong plaintext-ZIP
+- `decrypted_file` là tên của 
+- `-a`
 # Tool bkcrack
+Bkcrack cũng là một công cụ bẻ khoá mật khẩu dựa trên việc tấn công biết bản rõ
 
 # Điểm khác biệt giữa pkcrack và bkcrack
