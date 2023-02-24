@@ -35,7 +35,7 @@ John được trang bị một danh sách password riêng, mặc dù danh sách 
 
 John sẽ nhân vào 1 wordlist ta cho trước, sau đó tạo hash của từng từ bến trong worlist đó, rồi so sánh với hash cần crack. Nếu giống nhau thì crack thành công.
 
-Để thực hiện tấn công từ điển ta thêm `--wordlist=<Path>' vào câu lệnh. Trong đó `Path` là đường dẫn tới wordlist.
+Để thực hiện tấn công từ điển ta thêm `--wordlist=<Path>` vào câu lệnh. Trong đó `Path` là đường dẫn tới wordlist.
 
 ## Tấn công brute-force 
 
@@ -76,6 +76,10 @@ Sử dụng câu lệnh `hashcat -h` để xem
   7 | Hybrid Mask + Wordlist
   9 | Association
 ~~~
+
+Các phương thức bẻ khoá mật khẩu 
+
+## Bẻ khoá bằng brute force
 
 # Tool bkcrack
 
