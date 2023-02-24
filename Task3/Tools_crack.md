@@ -152,7 +152,7 @@ Kali@kali:~$ bkcrack -k keys --bruteforce ?b --length disgits
  
 
 
-# Tool bkcrack
+# Tool pkcrack
 Pkcrack cũng là một công cụ bẻ khoá mật khẩu dựa trên việc tấn công biết bản rõ.
 
 Điều kiện để sử dụng cũng giống file bkcrack
