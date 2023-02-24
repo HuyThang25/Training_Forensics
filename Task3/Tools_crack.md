@@ -114,7 +114,7 @@ Ta chuyển vào Mask (là tập hợp những charset)
 
 Bkcrack là công cụ bẻ khoá mật khẩu dựa trên việc tấn công biết bản rõ (known plaintext attack), nghĩa là bạn phải biết một phần bản rõ của dữ liệu để giải mã.
 
-Để thực hiện crack bằng pkcrack ta phải có hai file:
+Để thực hiện crack bằng bkcrack ta phải có hai file:
 
 - Thứ nhất là: phân vùng zip muốn crack.
 - Thứ hai là: một phân vùng zip khác chứa ít nhất một file bên trong phân zip thứ nhất. File này phải được nén cùng phương thức với file thứ nhất.
