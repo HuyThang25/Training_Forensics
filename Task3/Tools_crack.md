@@ -82,9 +82,12 @@ Các phương thức bẻ khoá mật khẩu
 
 ## Tấn công từ điển
 
-Mode `-a 0`
+Ta sử dụng mode `-a 0` 
 
-Cung cấp cho Hashcat một danh sách (có thể là tập hợp những passwords hay được dùng nhất). Hashcat sẽ sử dụng lần lượt từng giá trị trong danh sách này để hash nó với thuật toán đã chỉ định và so sánh với hash đầu vào, nếu kết quả sai, Hashcat sẽ thử giá trị tiếp theo trong danh sách được cung cấp, nếu đúng thì Hashcat trả lại kết quả đã tạo nên giá trị hash trùng khớp với giá trị hash đầu vào.
+Ví du
+~~~
+$ hashcat -m 0 -a 0 hash.txt /usr/share/john/password.lst
+~~~
 
 ## Tấn công brute--force
 
