@@ -27,7 +27,7 @@ $ john --list=formats
 
 Các phương pháp bẻ khoá mật khẩu
 
-## Sử dụng tấn công từ điển
+## Tấn công từ điển
 
 Tấn công từ điển là hình thức tấn công bằng cách thử qua nhiều mật khẩu tiềm năng để tìm ra mật khẩu đúng. Danh sách các mật khẩu tiểm năng được lấy trong từ điển và có thể liên quan đến tên người dùng, sinh nhât, sở thích... hay đơn giản giản là các từ phổ biến như "password"... Một chương trình máy tính có thể chạy hàng triều từ trong vài giờ.
 
@@ -76,10 +76,35 @@ Sử dụng câu lệnh `hashcat -h` để xem
   7 | Hybrid Mask + Wordlist
   9 | Association
 ~~~
-
+- `hash|hashfile|hccapxfile` chỉ định mã băm muốn giải hoặc chỉ định vị trí của tệp chứa (các) hàm băm mà bạn định bẻ khóa
+- `[dictionary|mask|directory]` chỉ định từ điển (danh sách từ), mặt nạ hoặc thư mục sẽ được sử dụng.
 Các phương thức bẻ khoá mật khẩu 
 
-## Bẻ khoá bằng brute force
+## Tấn công từ điển
+
+Mode `-a 0`
+
+Cung cấp cho Hashcat một danh sách (có thể là tập hợp những passwords hay được dùng nhất). Hashcat sẽ sử dụng lần lượt từng giá trị trong danh sách này để hash nó với thuật toán đã chỉ định và so sánh với hash đầu vào, nếu kết quả sai, Hashcat sẽ thử giá trị tiếp theo trong danh sách được cung cấp, nếu đúng thì Hashcat trả lại kết quả đã tạo nên giá trị hash trùng khớp với giá trị hash đầu vào.
+
+## Tấn công brute--force
+
+Mode `-a 3`
+
+Các từ khoá charsets 
+~~~
+? | Charset
+ ===+=========
+  l | abcdefghijklmnopqrstuvwxyz [a-z]
+  u | ABCDEFGHIJKLMNOPQRSTUVWXYZ [A-Z]
+  d | 0123456789                 [0-9]
+  h | 0123456789abcdef           [0-9a-f]
+  H | 0123456789ABCDEF           [0-9A-F]
+  s |  !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+  a | ?l?u?d?s
+  b | 0x00 - 0xff
+~~~
+
+
 
 # Tool bkcrack
 
